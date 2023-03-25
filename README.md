@@ -8,3 +8,5 @@
 - working with conditional expressions
 - working with cycles
 - equals/hashcode/==
+
+### The "others" package shows other skills of working with the basics of java, as well as various tasks from interviews
