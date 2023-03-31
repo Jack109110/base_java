@@ -41,14 +41,14 @@ public class CollectionExamples {
     }
 
     /**
-     * Задачи из собеседований
+     * Задачи из собеседований, показывающие пример работы с коллекциями
      */
-    public static class Tasks {
+    public static class ExampleCollection {
 
         /**
          * Убрать дубликаты из коллекции (3 варианта)
          */
-        public static void noDublicate(List<String> e) {
+        public static void noDuplicate(List<String> e) {
             //  (1)  List<String> d = e.stream().distinct().toList();
 
 
