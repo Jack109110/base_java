@@ -1,4 +1,4 @@
-package com.lazarev.collections;
+package com.lazarev.other;
 
 import java.util.*;
 
