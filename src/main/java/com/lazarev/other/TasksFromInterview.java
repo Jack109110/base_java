@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Задачи из собеседований, показывающие пример работы с коллекциями
+ * Задачи из собеседований, показывающие пример работы с коллекциями, циклами, дженериками и тд.
  */
 public class TasksFromInterview {
 
@@ -46,12 +46,122 @@ public class TasksFromInterview {
     }
 
     /**
-     * Проверить слово на полиндромность
+     * Проверить слово на полиндромность (2 варианта)
      */
     public static boolean polindrom(String p) {
+        // (1)
         for (int i = 0; i <= p.length() - 1; i++) {
             if (p.charAt(i) != p.charAt(p.length() - 1 - i)) return false;
         }
         return true;
+
+        // (2)
+        //    String c = p.toLowerCase();
+        //    StringBuilder d = new StringBuilder();
+        //    d.append(c).reverse();
+        //    return c.equals(d.toString());
+    }
+
+    /**
+     * При заданном диапазоне чисел вывести те, которые делятся на 5 или 3 без остатка, закончить перебор
+     * диапазона на числе, которое делятся и на 5, и на 3; использовать дженерики
+     */
+    public static <T> T rangeInt(Integer j, Integer o) {
+        for (Integer i = j; i <= o; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("Выход из цикла на цифре " + i);
+                return (T) i;
+            } else if (i % 3 == 0) {
+                System.out.println("Число " + i + " делится на 3 без остатка");
+            } else if (i % 5 == 0) {
+                System.out.println("Число " + i + " делится на 5 без остатка");
+            } else {
+                System.out.println("Ошибка, число " + i + " не делится на 3 или 5 без остатка");
+            }
+        }
+        System.out.println("Введены неверные значения");
+        return (T) "null";
+    }
+
+    /**
+     * Перевернуть строку (2 варианта)
+     */
+    public static void reverseString(String y) {
+        // (1)
+        ArrayList<String> w = new ArrayList<>();
+        for (int i = 0; i < y.length(); i++) {
+            w.add(String.valueOf(y.charAt(y.length() - 1 - i)));
+        }
+        String q = String.join("", w);
+        System.out.println(q);
+
+        // (2)
+        //    StringBuilder m = new StringBuilder();
+        //    m.append(y).reverse();
+        //    System.out.println(m);
+    }
+
+    /**
+     * На вход приходят строка и символ. Посчитать, сколько раз данный символ встречается в строке
+     */
+    public static int counterChar(String t, Character p) {
+        int counter = 0;
+        for (int i = 0; i < t.length(); i++) {
+            if (p == t.charAt(i)) counter++;
+        }
+        return counter;
+    }
+
+    /**
+     * Разделить строку на подстроки с помощью символа
+     */
+    public static void delimString(String g) {
+        String[] m = g.split(",");
+        for (String word : m) {
+            System.out.println(word);
+        }
+    }
+
+    /**
+     * Поменять местами a & b, не используя третью переменную.
+     * (на вход методу приходит например 5 и 8, вернуть или вывести в консоль нужно 8 и 5.
+     */
+    public static void replaceVar(int a, int b) {
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    public static void replaceVar(String a, String b) {
+        a = a + b;
+        b = a.substring(0, (a.length() - b.length()));
+        a = a.substring(b.length());
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+
+    /**
+     * Написать метод, который будет возвращать true если поданный на вход массив int
+     * содержит 3 и более последовательных числа в любом месте
+     */
+    public static boolean consecutiveNumb(int[] b) {
+        for (int i = 0; i < b.length - 2; i++) {
+            if (b[i] + 1 == b[i + 1] && b[i] + 2 == b[i + 2]) return true;
+        }
+        return false;
+    }
+
+    /**
+     * Вернуть лист стрингов, в котором слова начинаются на букву "I"
+     */
+    public static ArrayList<String> listStr(ArrayList<String> h) {
+        ArrayList<String> n = new ArrayList<>();
+        char z = 'I';
+        for (int i = 0; i < h.size(); i++) {
+            if (h.get(i).charAt(0) == z) n.add(h.get(i));
+        }
+        return n;
     }
 }
