@@ -194,4 +194,18 @@ public class TasksFromInterview {
         }
         return c;
     }
+
+    /**
+     * 12. Написать метод, на вход которого подается число, и возвращается сумма цифр данного числа
+     * 99 -> 18
+     */
+    public static int sumInt(int l) {
+        char[] m = ("" + l).toCharArray();
+        int resultSum = 0;
+        for (int i = 0; i < m.length; i++) {
+            resultSum += Integer.parseInt(String.valueOf(m[i]));
+        }
+        return resultSum;
+    }
+
 }
