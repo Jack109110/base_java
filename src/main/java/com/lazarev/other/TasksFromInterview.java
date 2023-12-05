@@ -9,7 +9,7 @@ import java.util.List;
 public class TasksFromInterview {
 
     /**
-     * Убрать дубликаты из коллекции (3 варианта)
+     * 1. Убрать дубликаты из коллекции (3 варианта решения)
      */
     public static void noDuplicate(List<String> e) {
         //  (1)  List<String> d = e.stream().distinct().toList();
@@ -33,7 +33,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * Найти максимальное значение в коллекции
+     * 2. Найти максимальное значение в коллекции
      */
     public static void maxValue(List<Integer> e) {
         int max = e.get(0);
@@ -46,7 +46,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * Проверить слово на полиндромность (2 варианта)
+     * 3. Проверить слово на полиндромность (2 варианта решения)
      */
     public static boolean polindrom(String p) {
         // (1)
@@ -63,7 +63,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * При заданном диапазоне чисел вывести те, которые делятся на 5 или 3 без остатка, закончить перебор
+     * 4. При заданном диапазоне чисел вывести те, которые делятся на 5 или 3 без остатка, закончить перебор
      * диапазона на числе, которое делятся и на 5, и на 3; использовать дженерики
      */
     public static <T> T rangeInt(Integer j, Integer o) {
@@ -84,7 +84,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * Перевернуть строку (2 варианта)
+     * 5. Перевернуть строку (2 варианта)
      */
     public static void reverseString(String y) {
         // (1)
@@ -102,7 +102,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * На вход приходят строка и символ. Посчитать, сколько раз данный символ встречается в строке
+     * 6. На вход приходят строка и символ. Посчитать, сколько раз данный символ встречается в строке
      */
     public static int counterChar(String t, Character p) {
         int counter = 0;
@@ -113,7 +113,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * Разделить строку на подстроки с помощью символа
+     * 7. Разделить строку на подстроки с помощью символа
      */
     public static void delimString(String g) {
         String[] m = g.split(",");
@@ -123,7 +123,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * Поменять местами a & b, не используя третью переменную.
+     * 8. Поменять местами a & b, не используя третью переменную.
      * (на вход методу приходит например 5 и 8, вернуть или вывести в консоль нужно 8 и 5.
      */
     public static void replaceVar(int a, int b) {
@@ -143,7 +143,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * Написать метод, который будет возвращать true если поданный на вход массив int
+     * 9. Написать метод, который будет возвращать true если поданный на вход массив int
      * содержит 3 и более последовательных числа в любом месте
      */
     public static boolean consecutiveNumb(int[] b) {
@@ -153,8 +153,21 @@ public class TasksFromInterview {
         return false;
     }
 
+    public static boolean consecNumb(int[] t) {
+        for (int i = 0; i < t.length; i++) {
+            for (int j = 0; j < t.length; j++) {
+                if (t[i] == t[j] + 1) {
+                    for (int k = 0; k < t.length; k++) {
+                        if (t[j] == t[k] + 1) return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     /**
-     * Вернуть лист стрингов, в котором слова начинаются на букву "I"
+     * 10. Вернуть лист стрингов, в котором слова начинаются на букву "I"
      */
     public static ArrayList<String> listStr(ArrayList<String> h) {
         ArrayList<String> n = new ArrayList<>();
@@ -163,5 +176,22 @@ public class TasksFromInterview {
             if (h.get(i).charAt(0) == z) n.add(h.get(i));
         }
         return n;
+    }
+
+    /**
+     * 11.Написать метод, который принимает на вход два массива А и Б, на выходе массив С
+     * Массив С заполняется следующим образом, его i-ый элемент равен количеству элементов массива А
+     * которые меньше либо равны i-тому элементу массива Б
+     */
+    public static int[] returnArray(int[] a, int[] b) {
+        int[] c = new int[b.length];
+        for (int i = 0; i < b.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < a.length; j++) {
+                if (a[j] <= b[i]) counter++;
+            }
+            c[i] = counter;
+        }
+        return c;
     }
 }
