@@ -222,7 +222,7 @@ public class TasksFromInterview {
     }
 
     /**
-     * 14. Найти второе максимальное число в списке цисел
+     * 14. Найти второе максимальное число в списке чисел
      */
     public static void secondBiggest(List<Integer> e) {
         int biggest = e.get(0);
