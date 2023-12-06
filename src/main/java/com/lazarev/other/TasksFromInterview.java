@@ -208,4 +208,34 @@ public class TasksFromInterview {
         return resultSum;
     }
 
+    /**
+     * 13. Написать метод на вычисление серии чисел фибоначчи
+     */
+    public static void fibonacci(int quantity) {
+        int a =0, b =0, c=1;
+        for (int i = 0; i <= quantity; i++) {
+            a = b;
+            b = c;
+            c = a + b;
+            System.out.println(a);
+        }
+    }
+
+    /**
+     * 14. Найти второе максимальное число в списке цисел
+     */
+    public static void secondBiggest(List<Integer> e) {
+        int biggest = e.get(0);
+        int secondBig = e.get(0);
+        for (int i = 0; i < e.size(); i++) {
+            if (e.get(i) > biggest) {
+                biggest = e.get(i);
+                secondBig = biggest;
+            } else if (e.get(i) > secondBig && e.get(i) != biggest ) {
+                secondBig = e.get(i);
+            }
+        }
+        System.out.println(secondBig);
+    }
+
 }

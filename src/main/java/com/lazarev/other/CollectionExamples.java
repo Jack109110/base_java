@@ -18,6 +18,7 @@ public class CollectionExamples {
 
     public static void main(String[] args) {
 
+
 //        listExample.add("Moscow");
 //        listExample.add("London");
 //        listExample.add("Berlin");
