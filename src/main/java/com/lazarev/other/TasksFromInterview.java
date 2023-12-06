@@ -229,8 +229,8 @@ public class TasksFromInterview {
         int secondBig = e.get(0);
         for (int i = 0; i < e.size(); i++) {
             if (e.get(i) > biggest) {
-                biggest = e.get(i);
                 secondBig = biggest;
+                biggest = e.get(i);
             } else if (e.get(i) > secondBig && e.get(i) != biggest ) {
                 secondBig = e.get(i);
             }
