@@ -1,6 +1,7 @@
 package com.lazarev.other;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -212,7 +213,7 @@ public class TasksFromInterview {
      * 13. Написать метод на вычисление серии чисел фибоначчи
      */
     public static void fibonacci(int quantity) {
-        int a =0, b =0, c=1;
+        int a = 0, b = 0, c = 1;
         for (int i = 0; i <= quantity; i++) {
             a = b;
             b = c;
@@ -231,11 +232,36 @@ public class TasksFromInterview {
             if (e.get(i) > biggest) {
                 secondBig = biggest;
                 biggest = e.get(i);
-            } else if (e.get(i) > secondBig && e.get(i) != biggest ) {
+            } else if (e.get(i) > secondBig && e.get(i) != biggest) {
                 secondBig = e.get(i);
             }
         }
         System.out.println(secondBig);
+    }
+
+    /**
+     * 15. Написать метод, который принимает на вход массив цифр, находит в нем максимальное и минимальное
+     * значения и меняет их местами и выдает результат
+     */
+    public static void maxAndMin(int[] a) {
+        int max = a[0];
+        int min = a[0];
+        int indexMax = 0;
+        int indexMin = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i];
+                indexMax = i;
+            }
+            if (min > a[i]) {
+                min = a[i];
+                indexMin = i;
+            }
+        }
+        a[indexMax] = min;
+        a[indexMin] = max;
+        System.out.println(Arrays.toString(a));
     }
 
 }
