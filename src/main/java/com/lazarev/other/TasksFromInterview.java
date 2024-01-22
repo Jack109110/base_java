@@ -157,9 +157,9 @@ public class TasksFromInterview {
     public static boolean consecNumb(int[] t) {
         for (int i = 0; i < t.length; i++) {
             for (int j = 0; j < t.length; j++) {
-                if (t[i] == t[j] + 1) {
+                if (t[j] == t[i] + 1) {
                     for (int k = 0; k < t.length; k++) {
-                        if (t[j] == t[k] + 1) return true;
+                        if (t[k] == t[j] + 1) return true;
                     }
                 }
             }
