@@ -18,6 +18,9 @@ public class CollectionExamples {
 
     public static void main(String[] args) {
 
+        TaskOnBuildClass rex = new TaskOnBuildClass("Pass123!");
+        System.out.println(rex.showComplicated());
+
 //        listExample.add("Moscow");
 //        listExample.add("London");
 //        listExample.add("Berlin");
