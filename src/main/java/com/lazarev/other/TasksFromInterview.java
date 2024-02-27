@@ -279,4 +279,57 @@ public class TasksFromInterview {
         System.out.println(counter);
     }
 
+    /**
+    *    17. Написать функцию, которая пишет текст в центре рамки (из символов *)
+    *    В качестве входных параметров - выводимый текст, высота и ширина прямоугольной рамки
+    *    Пример вывода:
+    *    printBox("Java!", 17, 5)
+    *    *****************
+    *    *               *
+    *    *     Java!     *
+    *    *               *
+    *    *****************
+    */
+     public static void frameFunc(String word, int length, int height) {
+        if (length < word.length() + 2 || height < 3) {
+            System.out.println("Error input data");
+            return;
+        }
+        char symbol = '*';
+        int indent = (length - 2 - word.length()) / 2;
+        char[] firstLine = new char[length];
+        char[] secondLine = new char[length];
+        secondLine[0] = symbol;
+        secondLine[length - 1] = symbol;
+        char[] middleLine = new char[length];
+        middleLine[0] = symbol;
+        middleLine[length - 1] = symbol;
+        for (int i = 0; i < firstLine.length; i++) {
+            firstLine[i] = symbol;
+        }
+        for (int i = 1; i < secondLine.length - 1; i++) {
+            secondLine[i] = " ".charAt(0);
+        }
+        for (int i = 1; i < middleLine.length - 1; i++) {
+            if (i < indent + 1 || i > indent + word.length()) {
+                middleLine[i] = " ".charAt(0);
+            } else {
+                for (int j = 0; j < word.length(); j++) {
+                    middleLine[i] = word.toCharArray()[j];
+                    i++;
+                }
+                i--;
+            }
+        }
+        System.out.println(firstLine);
+        for (int i = 1; i < height - 1; i++) {
+            if (i >= height / 2 && i < height / 2 + 1) {
+                System.out.println(middleLine);
+            } else {
+                System.out.println(secondLine);
+            }
+        }
+        System.out.println(firstLine);
+    }
+
 }
