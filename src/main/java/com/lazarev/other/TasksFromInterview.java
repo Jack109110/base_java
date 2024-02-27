@@ -291,19 +291,23 @@ public class TasksFromInterview {
     *    *****************
     */
      public static void frameFunc(String word, int length, int height) {
-        if (length < word.length() + 2 || height < 3) {
+
+         if (length < word.length() + 2 || height < 3) {
             System.out.println("Error input data");
             return;
         }
+
         char symbol = '*';
         int indent = (length - 2 - word.length()) / 2;
         char[] firstLine = new char[length];
         char[] secondLine = new char[length];
+        char[] middleLine = new char[length];
+
         secondLine[0] = symbol;
         secondLine[length - 1] = symbol;
-        char[] middleLine = new char[length];
         middleLine[0] = symbol;
         middleLine[length - 1] = symbol;
+
         for (int i = 0; i < firstLine.length; i++) {
             firstLine[i] = symbol;
         }
@@ -321,6 +325,7 @@ public class TasksFromInterview {
                 i--;
             }
         }
+
         System.out.println(firstLine);
         for (int i = 1; i < height - 1; i++) {
             if (i >= height / 2 && i < height / 2 + 1) {
