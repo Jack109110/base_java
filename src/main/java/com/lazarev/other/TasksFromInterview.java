@@ -280,19 +280,19 @@ public class TasksFromInterview {
     }
 
     /**
-    *    17. Написать функцию, которая пишет текст в центре рамки (из символов *)
-    *    В качестве входных параметров - выводимый текст, высота и ширина прямоугольной рамки
-    *    Пример вывода:
-    *    printBox("Java!", 17, 5)
-    *    *****************
-    *    *               *
-    *    *     Java!     *
-    *    *               *
-    *    *****************
-    */
-     public static void frameFunc(String word, int length, int height) {
+     * 17. Написать функцию, которая пишет текст в центре рамки (из символов *)
+     * В качестве входных параметров - выводимый текст, высота и ширина прямоугольной рамки
+     * Пример вывода:
+     * printBox("Java!", 17, 5)
+     * *****************
+     * *               *
+     * *     Java!     *
+     * *               *
+     * *****************
+     */
+    public static void frameFunc(String word, int length, int height) {
 
-         if (length < word.length() + 2 || height < 3) {
+        if (length < word.length() + 2 || height < 3) {
             System.out.println("Error input data");
             return;
         }
@@ -337,4 +337,27 @@ public class TasksFromInterview {
         System.out.println(firstLine);
     }
 
+    /**
+     * 18. Написать функцию, которая принимает на вход слово, сепаратор, и число. Результат должен возвращать
+     * строку, содержащую слово в количестве равном числу, разделенным сепаратором
+     * {"Java", " ", 3} -> "Java Java Java"
+     */
+    public static StringBuilder concatString(String word, String separator, Integer count) {
+        StringBuilder resString = new StringBuilder(word);
+        if (count <= 0) {
+            resString = new StringBuilder("");
+            return resString;
+        }
+        for (int i = 1; i < count; i++) {
+            resString.append(separator).append(word);
+        }
+        return resString;
+
+        //    (2)
+        //      String resString = word;
+        //      for (int i = 1; i < count; i++) {
+        //          resString = "%s%s%s".formatted(resString, separator, word);
+        //      }
+        //      return resString;
+    }
 }
